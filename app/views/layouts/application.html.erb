@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Bookers2</title>
+    <title>Bookers</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,35 @@
   </head>
 
   <body>
+    <ul>
+      <% if user_signed_in? %>
+        <li>
+          <%= link_to "Home", books_path %>
+        </li>
+        <li>
+          <%= link_to "User", "#" %>
+        </li>
+        <li>
+          <%= link_to "Books", "#" %>
+        </li>
+        <li>
+          <%= link_to "logout", destroy_user_session_path, method: :delete %>
+        </li>
+      <% else %>
+        <li>
+          <%= link_to "Home", top_path %>
+        </li>
+        <li>
+          <%= link_to "About", "#" %>
+        </li>
+        <li>
+          <%= link_to "sign up", new_user_registration_path %>
+        </li>
+        <li>
+          <%= link_to "login", user_session_path %>
+        </li>
+      <% end %>
+    </ul>
     <%= yield %>
   </body>
 </html>
