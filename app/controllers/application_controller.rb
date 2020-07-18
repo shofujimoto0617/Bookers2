@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(resource)
-  	books_path
+  	user_path(resource.id)
   end
 
   def after_sign_out_path_for(resouce)

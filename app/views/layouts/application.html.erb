@@ -13,13 +13,13 @@
     <ul>
       <% if user_signed_in? %>
         <li>
-          <%= link_to "Home", books_path %>
+          <%= link_to "Home", user_path(current_user.id) %>
         </li>
         <li>
           <%= link_to "User", "#" %>
         </li>
         <li>
-          <%= link_to "Books", "#" %>
+          <%= link_to "Books", books_path %>
         </li>
         <li>
           <%= link_to "logout", destroy_user_session_path, method: :delete %>
