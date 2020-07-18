@@ -1,6 +1,10 @@
 <h1>Books</h1>
 <p>Title</p>
 <p>Opinion</p>
+<% @books.each do |book| %>
+  <%= book.title %>
+  <%= book.body %>
+<% end %>
 
 
 <h1>New book</h1>
