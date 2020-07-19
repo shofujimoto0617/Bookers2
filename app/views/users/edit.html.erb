@@ -2,5 +2,12 @@
 <%= form_for(@user) do |f| %>
   <h2>Name</h2>
   <%= f.text_field :name, autofocus: true %>
+  <h2>Image</h2>
+  <%= attachment_image_tag @user, :profile_image, :fill, 60, 60 %>
+  <%= f.attachment_field :profile_image %>
+  <h2>Introduction</h2>
+  <%= f.text_field :introduction, autofocus: :true %>
+
+  <%= f.submit "Update User" %>
 
 <% end %>
