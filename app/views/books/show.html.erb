@@ -1,0 +1,23 @@
+<h1>Book detail</h1>
+<%= attachment_image_tag @user, :profile_image, :fill, 60, 60, format: 'jpeg' %>
+<%= @book.title %>
+<%= @book.body %>
+
+<h1>User info</h1>
+
+<%= attachment_image_tag @user, :profile_image, :fill, 60, 60, format: 'jpeg' %>
+<h3>name</h3>
+<%= @user.name %>
+<h3>introduction</h3>
+<%= @user.introduction %>
+
+<h1>New book</h1>
+<%= form_for(@book) do |f| %>
+  <p>Title</p>
+  <%= f.text_field :title %>
+
+  <p>Opinion</p>
+  <%= f.text_field :body %>
+
+  <%= f.submit 'Create Book' %>
+<% end %>
