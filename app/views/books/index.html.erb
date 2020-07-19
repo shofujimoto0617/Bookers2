@@ -1,3 +1,15 @@
+<h1>User info</h1>
+
+<%= attachment_image_tag @user, :profile_image, :fill, 60, 60, format: 'jpeg' %>
+<h3>name</h3>
+<%= @user.name %>
+<h3>introduction</h3>
+<%= @user.introduction %>
+
+<% if @user.id == current_user.id %>
+  <p><%= link_to "編集", edit_user_path(@user) %></p>
+<% end %>
+
 <h1>Books</h1>
 <p>Title</p>
 <p>Opinion</p>
