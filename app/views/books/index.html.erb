@@ -14,6 +14,7 @@
 <p>Title</p>
 <p>Opinion</p>
 <% @books.each do |book| %>
+  <%= attachment_image_tag @user, :profile_image, :fill, 60, 60, format: 'jpeg' %>
   <%= book.title %>
   <%= book.body %>
 <% end %>
