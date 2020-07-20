@@ -12,8 +12,8 @@ class ApplicationController < ActionController::Base
   	user_path(resource.id)
   end
 
-  def after_sign_out_path_for(resouce)
-  	new_user_session_path
+  def after_sign_out_path_for(resource)
+  	root_path
   end
 
 end

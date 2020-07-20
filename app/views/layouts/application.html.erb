@@ -19,35 +19,37 @@
           <ul class="nav navbar-nav navbar-right">
             <% if user_signed_in? %>
               <li>
-                <a class="glyphicon glyphicon-home home"><%= link_to "Home", user_path(current_user.id) %></a>
+                <%= link_to "Home", user_path(current_user.id), class: 'glyphicon glyphicon-home home' %>
               </li>
               <li>
-                <a class="glyphicon glyphicon-user users"><%= link_to "User", users_path %></a>
+                <%= link_to "User", users_path, class: 'glyphicon glyphicon-user users' %>
               </li>
               <li>
-                <a class="glyphicon glyphicon-book books"><%= link_to "Books", books_path %></a>
+                <%= link_to "Books", books_path, class: 'glyphicon glyphicon-book books' %>
               </li>
               <li>
-                <a class="glyphicon glyphicon-log-out logout"><%= link_to "logout", destroy_user_session_path, method: :delete %></a>
+                <%= link_to "logout", destroy_user_session_path, method: :delete, class: 'glyphicon glyphicon-log-out logout' %>
               </li>
             <% else %>
               <li>
-                <a class="glyphicon glyphicon-home home"><%= link_to "Home", top_path %></a>
+               <%= link_to "Home", root_path, class: 'glyphicon glyphicon-home home' %>
               </li>
               <li>
-                <a class="glyphicon glyphicon-link about"><%= link_to "About", "#" %></a>
+                <%= link_to "About", "#", class: 'glyphicon glyphicon-link about' %>
               </li>
               <li>
-                <a class="glyphicon glyphicon-log-in sign_in"><%= link_to "sign up", new_user_registration_path %>
+                <%= link_to "sign up", new_user_registration_path, class: 'glyphicon glyphicon-log-in sign_in' %>
               </li>
               <li>
-                <a class="glyphicon glyphicon-log-in sign_in"><%= link_to "login", user_session_path %></a>
+                <%= link_to "login", user_session_path, class: 'glyphicon glyphicon-log-in sign_in' %>
               </li>
             <% end %>
           </ul>
         </nav>
       </div>
     </header>
+    <div class="block"></div>
     <%= yield %>
+
   </body>
 </html>
