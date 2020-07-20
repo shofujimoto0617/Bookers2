@@ -3,6 +3,9 @@
 <%= @book.title %>
 <%= @book.body %>
 
+<%= link_to 'Edit', edit_book_path(@book.id) %>
+
+
 <h1>User info</h1>
 
 <%= attachment_image_tag @user, :profile_image, :fill, 60, 60, format: 'jpeg' %>
