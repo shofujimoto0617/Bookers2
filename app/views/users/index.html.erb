@@ -55,16 +55,18 @@
           </thead>
 
           <tbody>
-          	<td>
           <% @users.each do |user| %>
-              <%= attachment_image_tag user,:profile_image, :fill, 60, 60, format: 'jpg' %>
-            </td>
-            <td>
-              <%= user.name %>
-            </td>
-            <td>
-              <%= link_to 'show', user_path(@user.id) %>
-            </td>
+            <tr>
+          	  <td>
+                <%= attachment_image_tag user,:profile_image, :fill, 60, 60, format: 'jpg' %>
+              </td>
+              <td>
+                <%= user.name %>
+              </td>
+              <td>
+                <%= link_to 'show', user_path(user.id) %>
+              </td>
+            </tr>
           <% end %>
         </table>
       </div>

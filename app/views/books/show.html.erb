@@ -58,11 +58,17 @@
 
           <tbody>
             <tr>
+            <% if @user == current_user %>
           	  <td><%= attachment_image_tag @user, :profile_image, :fill, 60, 60, format: 'jpeg' %></td>
               <td><%= @book.title %></td>
               <td><%= @book.body %></td>
               <td><%= link_to 'Edit', edit_book_path(@book.id), class: 'btn-sm btn-success' %></td>
               <td><%= link_to 'Destroy', book_path(@book.id), method: :delete, "data-confirm"=>"本当に消しますか？", class: 'btn-sm btn-danger' %></td>
+              <% else %>
+              <td><%= attachment_image_tag @user, :profile_image, :fill, 60, 60, format: 'jpeg' %></td>
+              <td><%= @book.title %></td>
+              <td><%= @book.body %></td>
+             <% end %>
             </tr>
           </tbody>
         </table>
