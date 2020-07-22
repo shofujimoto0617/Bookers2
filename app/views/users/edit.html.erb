@@ -1,7 +1,19 @@
 <div class="body">
   <div class="container">
   	<p class="notice"></p>
+
   	<h2>User info</h2>
+
+    <% if @user.errors.any? %>
+  	  <h3><%= pluralize(@user.errors.count, "error") %> prohibited this obj from being saved:</h3>
+
+  	  <ul>
+  	  	<% @user.errors.full_messages.each do |massage| %>
+  	  	  <li><%= massage %></li>
+  	  	<% end %>
+  	  </ul>
+  	<% end %>
+
     <%= form_for(@user) do |f| %>
     <div class="field">
       <label for="user_name">Name</label>
@@ -25,3 +37,13 @@
     <% end %>
   </div>
 </div>
+
+<footer>
+  <div class="container">
+  	<div class="row">
+  	  <div class="col-xs-3 col-xs-offset-9">
+  	  	<p>CopyRight Infratop.inc</p>
+  	  </div>
+  	</div>
+  </div>
+</footer>
