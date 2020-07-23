@@ -22,9 +22,7 @@
         </table>
 
         <div class="row">
-          <% if @user.id == current_user.id %>
-            <%= link_to "", edit_user_path(@user), class: 'col-xs-12 btn btn-default glyphicon glyphicon-wrench' %>
-          <% end %>
+          <%= link_to "", edit_user_path(@user), class: 'col-xs-12 btn btn-default glyphicon glyphicon-wrench' %>
         </div>
 
         <h2>New book</h2>
